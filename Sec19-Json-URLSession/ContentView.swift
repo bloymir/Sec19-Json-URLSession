@@ -2,12 +2,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var login = PostViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Hola")
         }
         .padding()
     }
