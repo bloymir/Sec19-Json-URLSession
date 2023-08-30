@@ -10,9 +10,19 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var login : PostViewModel
+    @StateObject var json = Modelo1ViewModel()
+    
     var body: some View {
         NavigationView {
-            Text("Bienvenido")
+            if json.datosModelo.isEmpty {
+                ProgressView()
+            } else {
+                List(json.datosModelo, id:\.id) { item in
+                    VStack(alignment: .leading){
+                        Text(item.name).font(.body).bold()
+                        Text(item.email)
+                    }
+                }
                 .navigationTitle("Json")
                 .navigationBarItems(leading:
                                         Button(action:{
@@ -28,12 +38,9 @@ struct Home: View {
                     Text("Siguiente")
                 }
                 )
+            }
+                
         }
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
