@@ -32,6 +32,7 @@ class PostViewModel: ObservableObject {
                 if !datos.token.isEmpty{
                     DispatchQueue.main.async {
                         self.auth = 1
+                        print(datos.token)
                     }
                 }
             }catch let error as NSError {
