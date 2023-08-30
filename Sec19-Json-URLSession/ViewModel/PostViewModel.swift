@@ -4,6 +4,13 @@ import Foundation
 class PostViewModel: ObservableObject {
     @Published var auth = 0
     
+    init(){
+        if let sesion = UserDefaults.standard.object(forKey: "sesion") as? Int {
+            auth = sesion
+        }else {
+            auth = 0
+        }
+    }
     
     func login(email: String, password: String){
         //Creacion URL
@@ -33,6 +40,7 @@ class PostViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.auth = 1
                         print(datos.token)
+                        UserDefaults.standard.set(1, forKey: "sesion")
                     }
                 }
             }catch let error as NSError {
