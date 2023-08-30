@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Sec19-Json-URLSession
-//
-//  Created by nelson tapia on 30-08-23.
-//
 
 import SwiftUI
 
