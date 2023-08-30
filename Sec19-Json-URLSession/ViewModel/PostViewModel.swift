@@ -4,9 +4,6 @@ import Foundation
 class PostViewModel: ObservableObject {
     @Published var auth = 0
     
-    init(){
-        login(email: "eve.holt@reqres.in", password: "cityslicka")
-    }
     
     func login(email: String, password: String){
         //Creacion URL
