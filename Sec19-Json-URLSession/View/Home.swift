@@ -20,7 +20,7 @@ struct Home: View {
                 List(json.datosModelo, id:\.id) { item in
                     VStack(alignment: .leading){
                         Text(item.name).font(.body).bold()
-                        Text(item.email)
+                        Text(item.address.street)
                     }
                 }
                 .navigationTitle("Json")
@@ -32,11 +32,11 @@ struct Home: View {
                     Text("Salir")
                 }
                                         , trailing:
-                                        Button(action:{
-                    
-                }){
+                                        NavigationLink(destination: {
+                    Home2()
+                }, label: {
                     Text("Siguiente")
-                }
+                })
                 )
             }
                 
