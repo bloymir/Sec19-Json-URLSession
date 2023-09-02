@@ -19,8 +19,9 @@ struct DetalleView: View {
             if user.avatar.isEmpty {
                 ProgressView()
             }else {
-                Image(systemName: "persona.fill")
-                    .data(url: URL(string: user.avatar)!)
+//                Image(systemName: "persona.fill")
+//                    .data(url: URL(string: user.avatar)!)
+                AsyncImage(url: URL(string: user.avatar))
                     .frame(width: 80, height: 80)
                     .clipped()
                     .clipShape(Circle())

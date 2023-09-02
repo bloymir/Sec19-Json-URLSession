@@ -13,8 +13,13 @@ struct Home2: View {
             List(json2.datosModelo.data, id:\.id){ item in
                 NavigationLink(destination: DetalleView(id: item.id)){
                     HStack{
-                        Image(systemName: "persona.fill")
+                        /*Image(systemName: "persona.fill")
                             .data(url: URL(string: item.avatar)!)
+                            .frame(width: 80, height: 80)
+                            .clipped()
+                            .clipShape(Circle())*/
+                        
+                        AsyncImage(url: URL(string: item.avatar))
                             .frame(width: 80, height: 80)
                             .clipped()
                             .clipShape(Circle())

@@ -1,6 +1,12 @@
 
 import SwiftUI
-
+/*
+ 
+ {
+     "email": "eve.holt@reqres.in",
+     "password": "cityslicka"
+ }
+ */
 struct Login: View {
     
     @State private var email = ""
